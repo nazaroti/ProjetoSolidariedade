@@ -1,0 +1,455 @@
+/* styles.css */
+html {
+    font-size: 25px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    background-color: #9ac41c;
+    color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header img {
+    width: 200px;
+    height: auto;
+    margin-right: 0px;
+}
+
+.title-container {
+    flex: 1;
+    text-align: center;
+    font-size: 2rem;
+    margin: 10px 0;
+}
+
+.header h1 {
+    font-size: 1.5rem;
+}
+
+.logout {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.logout:hover {
+    background-color: #fff;
+    color: #9ac41c;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    width: 100%;
+}
+
+.cards {
+    gap: 20px;
+    padding-top: 20px;
+    width: 100%;
+    max-width: 1700px;
+    margin: 0 auto;
+}
+
+#cards-eventos-futuros {
+    flex-direction: column;
+    background-color: #9ac41c;
+    padding: 30px;
+    margin-top: 20px;
+    border-radius: 20px;
+    box-shadow: inset 0 0 4px 3px rgba(116, 116, 116, 0.5);
+    flex-wrap: wrap;
+}
+
+#cards-relatorio-eventos {
+
+    padding: 30px;
+    margin-top: 20px;
+    border-radius: 20px;
+
+}
+
+#cards-solicitacoes-eventos {
+    position: relative;
+}
+
+.card {
+
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(71, 71, 71, 0.5);
+    transition: transform 0.3s;
+}
+
+#card-solicitacao-evento {
+    padding-bottom: 50px;
+}
+
+.buttons-container {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.futuro {
+    position: relative;
+    margin-top: 30px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-content {
+    max-width: 100%;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+
+.card-title {
+    font-size: 1.25rem;
+    color: #9ac41c;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    flex: 1;
+    word-break: break-word;
+}
+
+.title-ver {
+    color: #919191;
+    font-size: 20px;
+
+}
+
+.title-futuro {
+    color: #919191;
+}
+
+.card-description {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 25px;
+    word-break: break-word;
+}
+
+.card-button {
+    padding: 10px 15px;
+    color: #fff;
+    background-color: #9ac41c;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    box-shadow: 0 0 5px rgba(68, 68, 68, 0.5);
+
+}
+
+.filtrar {
+    background-color: #31bbed;
+    color: #ffffff;
+    margin-top: 10px;
+    box-shadow: 0 0 5px rgba(68, 68, 68, 0.5);
+    margin-left: auto;
+    font-size: 25px;
+    padding: 15px 30px;
+    border-radius: 12px;
+    transition: transform 0.2s;
+}
+
+.ver {
+    border-radius: 30px;
+}
+
+.ver:hover {
+    background-color: #748f2c;
+}
+
+.filtrar:hover {
+    transform: scale(1.05);
+}
+
+.add {
+    background-color: #33bbed;
+    color: #ffffff;
+    margin-top: 10px;
+    box-shadow: 0 0 5px rgba(68, 68, 68, 0.5);
+    transition: transform 0.2s;
+}
+
+.add:hover {
+    transform: scale(1.05);
+}
+
+.reject {
+    background-color: #e06158;
+
+}
+
+.accept {
+    background-color: #9ac41c;
+}
+
+.editar {
+    background-color: #b853e7;
+
+}
+
+.editar:hover {
+    background-color: #954bb8;
+}
+
+.reject:hover {
+    background-color: #b84848;
+}
+
+.accept:hover {
+    background-color: #86a040;
+}
+
+.section {
+    display: flex;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 1000px;
+    flex-wrap: wrap;
+}
+
+#relatorio-eventos {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.title-section {
+    flex: 1;
+    text-align: left;
+}
+
+#titulo-solicitacao-evento {
+    color: #7c7c7c;
+}
+
+#titulo-eventos-futuros {
+    color: #7c7c7c;
+    margin-top: 10px;
+
+}
+
+#titulo-relatorio-eventos {
+    color: #7c7c7c
+}
+
+.opcoes {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* Adiciona espaço entre os select e o botão */
+    margin-top: 20px;
+}
+
+
+.select-button {
+    margin-top: 20px;
+    padding: 15px 15px;
+    font-size: 1rem;
+    border-radius: 10px;
+    background-color: #9ac41c;
+    color: #fff;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 0 5px rgba(68, 68, 68, 0.5);
+    font-family: 'Sora';
+}
+
+.select-button:hover {
+    background-color: #7ea017;
+    transform: translateY(-2px);
+}
+
+.eventos {
+    margin-right: 30px;
+}
+
+
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Estilos gerais para a página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+/* Estilos da section */
+section {
+    text-align: center;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Botão principal */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos do Popup */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    animation: popupShow 0.3s ease-out;
+}
+
+.popup-content h2 {
+    margin: 0 0 10px;
+}
+
+.popup-content button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup-content button:hover {
+    background-color: #218838;
+}
+
+/* Animação do Popup */
+@keyframes popupShow {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .title-container {
+        font-size: 1.5rem;
+    }
+
+    .card {
+        margin: 10px;
+    }
+
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header img {
+        width: 60px;
+    }
+
+    .section {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .card-description {
+        font-size: 0.85rem;
+    }
+
+    .opcoes {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .select-button,
+    .card-button {
+        width: 100%;
+    }
+
+    .card-content {
+        align-items: flex-start;
+    }
+
+    .buttons-container {
+        flex-direction: column;
+        width: 100%;
+        position: relative;
+    }
+}

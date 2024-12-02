@@ -1,0 +1,124 @@
+<head>
+    <link rel="stylesheet" href="/css/eventosFuturosAdm.css">
+</head>
+
+<body>
+    <section class="upcoming-events-section" id="event-request-section">
+        <div class="section-title" id="upcoming-events-title">
+            <h2>Eventos Futuros</h2>
+        </div>
+        <div class="event-cards-container" id="event-cards-container">
+            {{#each upcomingEvents}}
+            <div class="event-card" id="upcoming-events-card">
+                <div class="event-card-content">
+                    <h3 class="event-card-title">🎈{{Nome}}</h3>
+                    <div class="event-card-info-container">
+                        <div class="event-card-info-column">
+                            <p><strong>📅Data:</strong> {{reverseDate Data}}</p>
+                            <p><strong>🕒Horário:</strong> {{removeSeconds Horario}}</p>
+                            <p><strong>🗺️Local:</strong> {{Local}}</p>
+                        </div>
+                        <div class="event-card-info-column">
+                            <p><strong>⏳Duração:</strong> {{Duracao}}</p>
+                            <p><strong>👥Vagas:</strong> {{Num_Vagas}}</p>
+                            <p><strong>🙋Responsável:</strong> {{Nome_Responsavel}}</p>
+                        </div>
+                    </div>
+                    <p class="event-card-description"><strong>Descrição:</strong> {{Descricao}}</p>
+                </div>
+                <div class="event-card-buttons">
+                    <form>
+                        <button class="event-card-button reject" name="reject" value="delete"
+                            onclick="showModal(event, this.value, {{ID_Evento}})">Excluir</button>
+                    </form>
+                    <form>
+                        <button class="event-card-button accept" name="approve" value="edit"
+                            onclick="showModalEdit(event, {{ID_Evento}}, '{{json this}}')">Editar</button>
+                    </form>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+
+    <div class="confirmation">
+        <div class="modal-overlay" id="modal">
+            <div class="modal-content">
+                <form id="modal-form" action="/deleteEvent?_method=DELETE" method="POST">
+                    <h2 class="modal-title" id="modal-title"></h2>
+                    <input type="hidden" name="event_id" id="Event_id" value="" />
+                    <input type="hidden" name="confirm" id="confirm" value="" />
+                    <button type="button" onclick="closeModal('modal')"
+                        class="event-card-button reject cancel">Cancelar</button>
+                    <button type="submit" class="event-card-button accept excluir">Excluir</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="confirmation">
+        <div class="modal-overlay" id="modal-edit">
+            <div class="modal-content">
+                <form id="edit-form" action="/editData?_method=PUT" method="POST">
+                    <h2 id="modal-title">Atualizar Evento</h2>
+
+                    <!-- Campos ocultos para ID e confirmação -->
+                    <input type="hidden" name="event_ID" id="event_ID" value="" />
+                    <input type="hidden" name="confirmation" id="confirmation" value="" />
+
+                    <!-- Nome do Evento -->
+                    <label for="event_name">🎈Nome do Evento:</label>
+                    <input type="text" name="event_name" id="event_name" required aria-required="true" />
+
+                    <!-- Descrição -->
+                    <label for="event_description">📝Descrição:</label>
+                    <textarea name="event_description" id="event_description" required aria-required="true"></textarea>
+
+                    <!-- Status -->
+                    <label for="event_status">🟡Status:</label>
+                    <select name="event_status" id="event_status" required aria-required="true">
+                        <option value="em analise">Em Análise</option>
+                        <option value="aprovado">Aprovado</option>
+                        <option value="reprovado">Reprovado</option>
+                    </select>
+
+                    <!-- Data -->
+                    <label for="event_date">🗓️Data:</label>
+                    <input type="date" name="event_date" id="event_date" required aria-required="true" />
+
+                    <!-- Horário -->
+                    <label for="event_time">🕒Horário:</label>
+                    <input type="time" name="event_time" id="event_time" required aria-required="true" />
+
+                    <!-- Número de Vagas -->
+                    <label for="event_slots">🧑‍🤝‍🧑Número de Vagas:</label>
+                    <input type="number" name="event_slots" id="event_slots" required aria-required="true" />
+
+                    <!-- Local -->
+                    <label for="event_location">📍Local:</label>
+                    <input type="text" name="event_location" id="event_location" required aria-required="true" />
+
+                    <!-- Duração -->
+                    <label for="event_duration">⏳Duração:</label>
+                    <input type="time" name="event_duration" id="event_duration" required aria-required="true" />
+
+                    <!-- Nome do Responsável -->
+                    <label for="event_responsible">🙋Nome do Responsável:</label>
+                    <input type="text" name="event_responsible" id="event_responsible" required aria-required="true" />
+
+                    <!-- Botões -->
+                    <div class="modal-buttons">
+                        <button type="button" onclick="closeModal('modal-edit')"
+                            class="button cancel">Fechar</button>
+                        <button type="submit" class="button confirm">Confirmar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="/js/eventosFuturosAdm.js"></script>
+</body>
+

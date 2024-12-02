@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrador</title>
+    <link rel="stylesheet" href="adm.css">
+    <link href='https://fonts.googleapis.com/css?family=Sora' rel='stylesheet'>
+    <style>
+        body {
+            font-family: 'Sora';
+            font-size: 22px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <img src="images/estrelaBranca.png" alt="Logo da Empresa">
+        <div class="title-container">
+            <h1>Painel de Administrador</h1>
+        </div>
+        <a href="#" class="logout">Sair</a>
+    </header>
+
+    <div class="content">
+        <section class="section" id="solicitacao-eventos">
+            <div class="title-section" id="titulo-solicitacao-evento">
+                <h2>Solicitações de Eventos</h2>
+            </div>
+            <div class="cards" id="cards-solicitacoes-eventos">
+                <div class="card" id="card-solicitacao-evento">
+                    <div class="card-content">
+                        <h3 class="card-title">Título do Evento</h3>
+                        <p class="card-description">Aqui vai uma breve descrição do evento, com informações importantes
+                            e interessantes.</p>
+                        <div class="buttons-container">
+                            <a href="#" class="card-button reject">Rejeitar</a>
+                            <a href="#" class="card-button accept">Aceitar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="section" id="eventos-futuros">
+            <div class="title-section" id="titulo-eventos-futuros">
+                <h2>Eventos Futuros</h2>
+            </div>
+            <a href="#" class="card-button add">Adicionar Evento</a>
+            <div class="cards" id="cards-eventos-futuros">
+                <div class="card" id="card-evento-futuro">
+                    <div class="card-content">
+                        <h3 class="card-title title-futuro">Título do Evento - 00/00/00</h3>
+                        <div class="buttons-container futuro">
+                            <a href="#" class="card-button reject">Excluir</a>
+                            <a href="#" class="card-button editar">Editar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="section" id="relatorio-eventos">
+            <div class="title-section" id="titulo-relatorio-eventos">
+                <h2>Relatório de Eventos</h2>
+            </div>
+            <div class="opcoes">
+                <div class="select-container">
+                    <select class="select-button eventos">
+                        <option value="" disabled selected>Todos Eventos</option>
+                        <option value="opcao1">Opção 1</option>
+                        <option value="opcao2">Opção 2</option>
+                        <option value="opcao3">Opção 3</option>
+                        <option value="opcao4">Opção 4</option>
+                    </select>
+                    <select class="select-button data">
+                        <option value="" disabled selected>DD/MM/AAAA</option>
+                        <option value="opcao1">Opção 1</option>
+                        <option value="opcao2">Opção 2</option>
+                        <option value="opcao3">Opção 3</option>
+                        <option value="opcao4">Opção 4</option>
+                    </select>
+                </div> 
+                <a href="#" class="card-button filtrar">Filtrar</a>
+            </div>
+            <div class="cards" id="cards-relatorio-eventos">
+                <div class="card" id="card-evento-futuro">
+                    <div class="card-content">
+                        <h3 class="card-title title-ver">Título do Evento - 00/00/00</h3>
+                        <div class="buttons-container futuro">
+                            <a href="#" class="card-button ver">Ver Participantes</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

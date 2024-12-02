@@ -1,0 +1,84 @@
+<head>
+    <link rel="stylesheet" href="/css/relatorioEventosAdm.css">
+</head>
+
+<body>
+
+    <div class="horizontal-section">
+        <section class="event-report-section" id="event-report-section">
+            <div class="section-title" id="event-report-title">
+                <h2>Relatório de Eventos</h2>
+            </div>
+            <div class="event-cards-container" id="event-cards-container">
+                {{#each eventReports}}
+                <div class="event-card" id="event-report-card">
+                    <div class="event-card-content">
+                        <h3 class="event-card-title">🎈 {{Nome}}</h3>
+                        <div class="event-card-info-container">
+                            <div class="event-card-info-column">
+                                <p><strong>📅Data: {{reverseDate Data}}</strong> </p>
+                                <p><strong>🕒Horário: {{removeSeconds Horario}}</strong> </p>
+                                <p><strong>🗺️Local: {{Local}}</strong></p>
+                            </div>
+                            <div class="event-card-info-column">
+                                <p><strong>⏳Duração: {{Duracao}}</strong> </p>
+                                <p><strong>👥Vagas: {{Num_Vagas}}</strong> </p>
+                                <p><strong>🙋Responsável: {{Nome_Responsavel}}</strong> </p>
+                            </div>
+                        </div>
+                        <p class="event-card-description"><strong>Descrição: {{Descricao}}</strong> </p>
+                    </div>
+                    <div class="event-card-buttons">
+                        {{#if (Equals this.Status 'reprovado')}}
+                        <form>
+                            <button class="event-card-button info" name="info" value="info"
+                                onclick="showModal(event, this.value, '{{json this}}')">Informações</button>
+                        </form>
+                        <form action="/viewParticipants" method="POST">
+                            <input type="hidden" name="id_event" value="{{ID_Evento}}" />
+                            <button class="event-card-button participant" name="participant"
+                                value="view">Participantes</button>
+                        </form>
+                        {{else}}
+                        <form>
+                            <a class=" event-card-button reject" name="reject" value="reject">Reprovado</a>
+                        </form>
+                        {{/if}}
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </section>
+
+        <div class="modal-infos">
+            <div class="modal-overlay" id="modal">
+                <div class="modal-content">
+                    <form>
+                        <h2 class="modal-title" id="modal-title"><strong>SFDUINSDFSD</strong></h2>
+                        <p><strong>Status:</strong> <span id="event_status"></span></p>
+                        <input type="hidden" id="event_id" name="event_id" value="" />
+                        <p><strong>Data:</strong> <span id="event_date"></span></p>
+                        <p><strong>Horário:</strong> <span id="event_time"></span></p>
+                        <p><strong>Local:</strong> <span id="event_location"></span></p>
+                        <p><strong>Duração:</strong> <span id="event_duration"></span></p>
+                        <p><strong>Vagas Disponíveis:</strong> <span id="event_slots"></span></p>
+                        <p><strong>Responsável:</strong> <span id="event_responsible"></span></p>
+                        <p><strong>Descrição:</strong> <span id="event_description"></span></p>
+                    </form>
+
+                    <button type="button" onclick="closeModal('modal')" class="event-card-button close">Fechar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-participants">
+            <div class="modal-overlay" id="modal-participant">
+                <div class="modal-content">
+                    <h4>Participantes</h4>
+                    <ul id="participantList"></ul>
+                </div>
+                <button onclick="closeModal('modal-participant')">Fechar</button>
+            </div>
+        </div>
+        <script src="/js/relatorioEventosAdm.js"></script>
+</body>

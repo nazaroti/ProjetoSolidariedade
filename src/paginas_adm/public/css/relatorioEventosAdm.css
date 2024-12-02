@@ -1,0 +1,231 @@
+body {
+    display: flex;
+    height: 100vh;
+    gap: 20px;
+}
+
+
+.horizontal-section {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+}
+
+
+
+.event-report-section {
+    width: 100%;
+    overflow-y: auto;
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+    word-wrap: break-word;
+    border-radius: 15px;
+    padding: 2%;
+}
+
+
+#event-report-title h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.section-title.week{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.event-card-info-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+
+#event-report-card {
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px #dadada;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+.event-card-title {
+    font-size: 1.8rem;
+    color: #33BBED;
+    font-weight: bold;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+
+.event-card-description {
+    font-size: 1.5rem;
+    color: #6e6e6e;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    overflow-wrap: break-word;
+    margin-top: 30px;
+}
+
+.event-card-buttons {
+    display: flex;
+    gap: 15px;
+    margin-left: auto;
+}
+
+.event-card-button {
+    all: unset;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 2rem;
+    text-decoration: none;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.info {
+    background-color: #f1f0f0;
+    border: 1px solid #33BBED;
+    color: #33BBED;
+}
+
+.participant {
+    background-color: #33BBED;
+}
+
+.reject{
+    color: #b43434;
+}
+.reactivate{
+    background-color: #33BBED;
+}
+
+.reactivate:hover{
+    background-color: #1d93be;
+}
+.event-card-button:hover {
+    opacity: 0.9;
+}
+
+.info:hover {
+    background-color: #dadada;
+}
+
+.participant:hover {
+    background-color: #1d93be;
+}
+
+/* #region Modal */
+
+.modal-participant {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+
+.modal-infos {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-overlay {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; 
+}
+
+/* Modal */
+.modal-content {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.modal-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.modal-content p {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #555;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modal-content button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.modal-content button:hover {
+    background-color: #45a049;
+}
+
+.event-card-button.close {
+    background-color: #f44336; 
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.event-card-button.close:hover {
+    background-color: #e53935; 
+}
+
+@media (max-width: 600px) {
+    .modal-content {
+        width: 95%;
+    }
+}
+
+.modal-overlay.show {
+    display: flex;
+}
+
+/* #endregion */
